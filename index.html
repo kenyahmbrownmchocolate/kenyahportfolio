@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÉLÉGANCE | Interior Design Studio</title>
+    <title>House of Kenyariri | Interior Design Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500&display=swap" rel="stylesheet">
     <style>
-        .font-playfair {
-            font-family: 'Avenir', sans-serif;
-            font-weight: 700;
+        body {
+            font-family: 'Josefin Sans', sans-serif;
         }
-        .font-raleway {
-            font-family: 'Avenir', sans-serif;
-            font-weight: 400;
+        .font-primary {
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 300;
+        }
+        .font-thin {
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 100;
         }
         .transition-nav {
             transition: background-color 0.3s ease;
@@ -30,30 +32,75 @@
             top: 2rem;
             opacity: 0.2;
         }
+        .hero-slider {
+            height: 90vh;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #1e3a8a;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .tag-line {
+            font-weight: 100;
+            letter-spacing: 3px;
+        }
     </style>
 </head>
-<body class="font-raleway text-gray-800 bg-white">
+<body class="text-gray-800 bg-white">
+    <!-- Announcement Bar -->
+    <div class="bg-blue-900 text-white text-center py-2 text-xs tracking-widest">
+        HOUSE OF KENYARIRI
+    </div>
+
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full py-4 px-6 md:px-12 flex justify-between items-center z-50 transition-nav bg-white bg-opacity-95">
-        <div class="font-playfair text-2xl font-bold tracking-wider">
-            ÉLÉGANCE
+    <nav id="navbar" class="sticky top-0 w-full py-4 px-6 md:px-12 flex justify-between items-center z-50 transition-nav bg-white bg-opacity-95 border-b border-gray-100">
+        <div class="flex items-center space-x-12">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center">
+                <img src="images/logo.png" alt="House of Kenyariri" class="h-10">
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8 uppercase text-xs tracking-widest">
+                <a href="#shop" class="nav-link hover:text-blue-900 transition duration-300">Shop</a>
+                <a href="#portfolio" class="nav-link hover:text-blue-900 transition duration-300">Portfolio</a>
+                <a href="#services" class="nav-link hover:text-blue-900 transition duration-300">Services</a>
+                <a href="#about" class="nav-link hover:text-blue-900 transition duration-300">About</a>
+                <a href="#blog" class="nav-link hover:text-blue-900 transition duration-300">Blog</a>
+            </div>
         </div>
         
-        <!-- Mobile menu button -->
-        <div class="md:hidden">
-            <button id="menu-toggle" class="outline-none">
-                <i class="bx bx-menu text-xl"></i>
-            </button>
-        </div>
-        
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-8 uppercase text-sm tracking-widest">
-            <a href="#home" class="hover:text-amber-700 transition duration-300">Home</a>
-            <a href="#about" class="hover:text-amber-700 transition duration-300">About</a>
-            <a href="#services" class="hover:text-amber-700 transition duration-300">Services</a>
-            <a href="#portfolio" class="hover:text-amber-700 transition duration-300">Portfolio</a>
-            <a href="#testimonials" class="hover:text-amber-700 transition duration-300">Testimonials</a>
-            <a href="#contact" class="hover:text-amber-700 transition duration-300">Contact</a>
+        <div class="flex items-center space-x-6">
+            <!-- Search, Account, Cart Icons -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#search" class="hover:text-blue-900 transition duration-300">
+                    <i class="bx bx-search text-xl"></i>
+                </a>
+                <a href="#account" class="hover:text-blue-900 transition duration-300">
+                    <i class="bx bx-user text-xl"></i>
+                </a>
+                <a href="#cart" class="hover:text-blue-900 transition duration-300">
+                    <i class="bx bx-shopping-bag text-xl"></i>
+                </a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="outline-none">
+                    <i class="bx bx-menu text-xl"></i>
+                </button>
+            </div>
         </div>
     </nav>
     
@@ -63,392 +110,475 @@
             <i class="bx bx-x text-2xl"></i>
         </button>
         <div class="flex flex-col space-y-6 uppercase text-sm tracking-widest text-center">
-            <a href="#home" class="hover:text-amber-700 transition duration-300 mobile-link">Home</a>
-            <a href="#about" class="hover:text-amber-700 transition duration-300 mobile-link">About</a>
-            <a href="#services" class="hover:text-amber-700 transition duration-300 mobile-link">Services</a>
-            <a href="#portfolio" class="hover:text-amber-700 transition duration-300 mobile-link">Portfolio</a>
-            <a href="#testimonials" class="hover:text-amber-700 transition duration-300 mobile-link">Testimonials</a>
-            <a href="#contact" class="hover:text-amber-700 transition duration-300 mobile-link">Contact</a>
+            <a href="#shop" class="hover:text-blue-900 transition duration-300 mobile-link">Shop</a>
+            <a href="#portfolio" class="hover:text-blue-900 transition duration-300 mobile-link">Portfolio</a>
+            <a href="#services" class="hover:text-blue-900 transition duration-300 mobile-link">Services</a>
+            <a href="#about" class="hover:text-blue-900 transition duration-300 mobile-link">About</a>
+            <a href="#blog" class="hover:text-blue-900 transition duration-300 mobile-link">Blog</a>
+            <div class="flex justify-center space-x-6 pt-6">
+                <a href="#search" class="hover:text-blue-900 transition duration-300">
+                    <i class="bx bx-search text-xl"></i>
+                </a>
+                <a href="#account" class="hover:text-blue-900 transition duration-300">
+                    <i class="bx bx-user text-xl"></i>
+                </a>
+                <a href="#cart" class="hover:text-blue-900 transition duration-300">
+                    <i class="bx bx-shopping-bag text-xl"></i>
+                </a>
+            </div>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center justify-center bg-gray-100">
+    <section id="home" class="hero-slider relative flex items-center justify-center bg-gray-100">
         <div class="absolute inset-0 overflow-hidden">
-            <img src="/api/placeholder/1600/900" alt="Interior Design Hero" class="object-cover w-full h-full opacity-80">
-            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <img src="images/hero-interior.jpg" alt="Interior Design Hero" class="object-cover w-full h-full">
         </div>
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
         <div class="relative text-center text-white z-10 px-4">
-            <h1 class="font-playfair text-4xl md:text-6xl font-bold mb-6">
-                Transforming Spaces<br>Into Experiences
+            <h1 class="font-thin text-5xl md:text-7xl mb-6 tracking-wider">
+                DESIGN WITH PURPOSE
             </h1>
-            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-                Luxury interior design that perfectly balances aesthetics, functionality, and your unique personality.
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light tracking-wide">
+                Creating spaces that tell your story
             </p>
-            <a href="#contact" class="inline-block bg-amber-700 hover:bg-amber-800 text-white px-8 py-3 uppercase tracking-wider text-sm font-medium transition duration-300">
-                Book a Consultation
+            <a href="#services" class="inline-block bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 uppercase tracking-wider text-sm transition duration-300">
+                Explore Our Services
             </a>
         </div>
-        <div class="absolute bottom-8 left-0 right-0 text-center">
-            <a href="#about" class="text-white animate-bounce inline-block">
-                <i class="bx bx-chevron-down"></i>
-            </a>
+    </section>
+
+    <!-- Featured Collection Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="font-thin text-3xl md:text-4xl mb-4 tracking-wider">Featured Collection</h2>
+                <p class="text-gray-600 max-w-xl mx-auto leading-relaxed">
+                    Our most popular design elements and products for your home
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Collection Item 1 -->
+                <div class="group relative overflow-hidden">
+                    <img src="images/collection-living-room.jpg" alt="Living Room Collection" class="w-full h-96 object-cover transition duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 transition duration-300 group-hover:bg-opacity-40">
+                        <div class="text-center text-white">
+                            <h3 class="font-thin text-2xl mb-3 tracking-wide">Living Room</h3>
+                            <a href="#shop-living" class="inline-block border-b border-white text-sm uppercase tracking-wider hover:border-blue-300">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Collection Item 2 -->
+                <div class="group relative overflow-hidden">
+                    <img src="images/collection-bedroom.jpg" alt="Bedroom Collection" class="w-full h-96 object-cover transition duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 transition duration-300 group-hover:bg-opacity-40">
+                        <div class="text-center text-white">
+                            <h3 class="font-thin text-2xl mb-3 tracking-wide">Bedroom</h3>
+                            <a href="#shop-bedroom" class="inline-block border-b border-white text-sm uppercase tracking-wider hover:border-blue-300">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Collection Item 3 -->
+                <div class="group relative overflow-hidden">
+                    <img src="images/collection-kitchen.jpg" alt="Kitchen Collection" class="w-full h-96 object-cover transition duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 transition duration-300 group-hover:bg-opacity-40">
+                        <div class="text-center text-white">
+                            <h3 class="font-thin text-2xl mb-3 tracking-wide">Kitchen</h3>
+                            <a href="#shop-kitchen" class="inline-block border-b border-white text-sm uppercase tracking-wider hover:border-blue-300">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-14">
+                <a href="#shop-all" class="inline-block border border-blue-900 hover:bg-blue-900 hover:text-white transition duration-300 px-8 py-3 uppercase tracking-wider text-sm">
+                    View All Collections
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 bg-white">
+    <section id="about" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6 md:px-12">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-12 md:mb-0">
-                    <img src="/api/placeholder/800/1000" alt="Interior Designer" class="w-full max-w-lg mx-auto rounded-lg shadow-lg">
+                    <img src="images/about-our-story.jpg" alt="Our Story" class="w-full max-w-lg mx-auto object-cover">
                 </div>
-                <div class="md:w-1/2 md:pl-12">
-                    <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-6">About ÉLÉGANCE Studio</h2>
-                    <div class="w-20 h-1 bg-amber-700 mb-8"></div>
+                <div class="md:w-1/2 md:pl-16">
+                    <h2 class="font-thin text-3xl md:text-4xl mb-8 tracking-wider">Our Story</h2>
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        Founded in 2015, ÉLÉGANCE is an award-winning interior design studio specializing in creating thoughtful, sophisticated spaces that reflect our clients' personalities and lifestyles.
+                        House of Kenyariri began with a passion for transforming spaces into meaningful environments that tell a story. Founded on principles of purpose-driven design, we create interiors that reflect both functionality and personality.
                     </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Our approach is based on a perfect balance between aesthetics and functionality. We believe that a well-designed space should not only look beautiful but also enhance the quality of life of those who inhabit it.
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Our approach combines timeless aesthetics with thoughtful details, ensuring each space we touch becomes a true reflection of those who inhabit it. Through careful curation and intentional design, we help our clients discover beauty in the everyday.
                     </p>
-                    <p class="text-gray-600 mb-10 leading-relaxed">
-                        With a team of talented designers and a network of skilled craftsmen, we handle projects of all sizes, from single-room makeovers to complete home renovations and commercial spaces.
-                    </p>
-                    <div class="flex space-x-8">
-                        <div>
-                            <h3 class="font-playfair text-3xl font-bold text-amber-700">120+</h3>
-                            <p class="text-gray-500 uppercase tracking-wide text-sm">Projects Completed</p>
-                        </div>
-                        <div>
-                            <h3 class="font-playfair text-3xl font-bold text-amber-700">15</h3>
-                            <p class="text-gray-500 uppercase tracking-wide text-sm">Design Awards</p>
-                        </div>
-                        <div>
-                            <h3 class="font-playfair text-3xl font-bold text-amber-700">8</h3>
-                            <p class="text-gray-500 uppercase tracking-wide text-sm">Years Experience</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-24 bg-gray-50">
-        <div class="container mx-auto px-6 md:px-12">
-            <div class="text-center mb-16">
-                <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-6">Our Services</h2>
-                <div class="w-20 h-1 bg-amber-700 mx-auto mb-8"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                    We offer a comprehensive range of interior design services tailored to meet your specific needs and budget.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-xl">
-                    <div class="text-amber-700 mb-4">
-                        <i class="bx bx-home-alt text-3xl"></i>
-                    </div>
-                    <h3 class="font-playfair text-xl font-bold mb-4">Residential Design</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Transform your home into a sanctuary that reflects your personality and meets your lifestyle needs, whether it's a single room or a complete home renovation.
-                    </p>
-                    <a href="#contact" class="text-amber-700 hover:text-amber-800 font-medium flex items-center">
-                        Learn More <i class="bx bx-right-arrow-alt ml-2 text-sm"></i>
+                    <a href="#about-page" class="inline-block border border-blue-900 hover:bg-blue-900 hover:text-white transition duration-300 px-8 py-3 uppercase tracking-wider text-sm">
+                        Learn More
                     </a>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-xl">
-                    <div class="text-amber-700 mb-4">
-                        <i class="bx bx-building-house text-3xl"></i>
-                    </div>
-                    <h3 class="font-playfair text-xl font-bold mb-4">Commercial Design</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Create inspiring workspaces, restaurants, hotels, or retail environments that enhance productivity, customer experience, and reflect your brand identity.
-                    </p>
-                    <a href="#contact" class="text-amber-700 hover:text-amber-800 font-medium flex items-center">
-                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                    </a>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-xl">
-                    <div class="text-amber-700 mb-4">
-                        <i class="bx bx-ruler text-3xl"></i>
-                    </div>
-                    <h3 class="font-playfair text-xl font-bold mb-4">Space Planning</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Optimize the functionality of your space with thoughtful layouts that maximize flow, comfort, and usability while maintaining aesthetic appeal.
-                    </p>
-                    <a href="#contact" class="text-amber-700 hover:text-amber-800 font-medium flex items-center">
-                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                    </a>
-                </div>
-                
-                <!-- Service 4 -->
-                <div class="bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-xl">
-                    <div class="text-amber-700 mb-4">
-                        <i class="bx bx-paint text-3xl"></i>
-                    </div>
-                    <h3 class="font-playfair text-xl font-bold mb-4">Custom Furniture Design</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Commission unique, bespoke furniture pieces tailored to your specific needs, space constraints, and design preferences.
-                    </p>
-                    <a href="#contact" class="text-amber-700 hover:text-amber-800 font-medium flex items-center">
-                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                    </a>
-                </div>
-                
-                <!-- Service 5 -->
-                <div class="bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-xl">
-                    <div class="text-amber-700 mb-4">
-                        <i class="bx bx-cube-alt text-3xl"></i>
-                    </div>
-                    <h3 class="font-playfair text-xl font-bold mb-4">3D Visualization</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        See your space before construction begins with photorealistic 3D renderings that help you visualize the final result and make informed decisions.
-                    </p>
-                    <a href="#contact" class="text-amber-700 hover:text-amber-800 font-medium flex items-center">
-                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                    </a>
-                </div>
-                
-                <!-- Service 6 -->
-                <div class="bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-xl">
-                    <div class="text-amber-700 mb-4">
-                        <i class="bx bx-task text-3xl"></i>
-                    </div>
-                    <h3 class="font-playfair text-xl font-bold mb-4">Project Management</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Enjoy a stress-free renovation with our comprehensive project management service, handling contractors, timelines, and budget oversight.
-                    </p>
-                    <a href="#contact" class="text-amber-700 hover:text-amber-800 font-medium flex items-center">
-                        Learn More <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="py-24 bg-white">
-        <div class="container mx-auto px-6 md:px-12">
-            <div class="text-center mb-16">
-                <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-6">Our Design Process</h2>
-                <div class="w-20 h-1 bg-amber-700 mx-auto mb-8"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                    Our streamlined approach ensures that every project is completed efficiently, on budget, and exceeds client expectations.
-                </p>
-            </div>
-            
-            <div class="flex flex-col md:flex-row justify-between items-start">
-                <!-- Step 1 -->
-                <div class="flex flex-col items-center text-center mb-10 md:mb-0 w-full md:w-1/4">
-                    <div class="w-16 h-16 rounded-full bg-amber-700 flex items-center justify-center text-white font-bold text-xl mb-6">
-                        1
-                    </div>
-                    <h3 class="font-playfair text-xl font-bold mb-4">Consultation</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        We begin with a thorough discussion of your vision, needs, budget, and timeline to establish the foundation of our design strategy.
-                    </p>
-                </div>
-                
-                <!-- Step 2 -->
-                <div class="flex flex-col items-center text-center mb-10 md:mb-0 w-full md:w-1/4">
-                    <div class="w-16 h-16 rounded-full bg-amber-700 flex items-center justify-center text-white font-bold text-xl mb-6">
-                        2
-                    </div>
-                    <h3 class="font-playfair text-xl font-bold mb-4">Concept Development</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Our team creates comprehensive design plans, including mood boards, color schemes, material selections, and space planning.
-                    </p>
-                </div>
-                
-                <!-- Step 3 -->
-                <div class="flex flex-col items-center text-center mb-10 md:mb-0 w-full md:w-1/4">
-                    <div class="w-16 h-16 rounded-full bg-amber-700 flex items-center justify-center text-white font-bold text-xl mb-6">
-                        3
-                    </div>
-                    <h3 class="font-playfair text-xl font-bold mb-4">Implementation</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        We coordinate with contractors, artisans, and vendors to bring your design to life, managing every detail of the process.
-                    </p>
-                </div>
-                
-                <!-- Step 4 -->
-                <div class="flex flex-col items-center text-center w-full md:w-1/4">
-                    <div class="w-16 h-16 rounded-full bg-amber-700 flex items-center justify-center text-white font-bold text-xl mb-6">
-                        4
-                    </div>
-                    <h3 class="font-playfair text-xl font-bold mb-4">Final Reveal</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        We complete the project with styling and finishing touches, ensuring every element contributes to a cohesive, beautiful space.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-24 bg-gray-50">
+    <section id="portfolio" class="py-20 bg-white">
         <div class="container mx-auto px-6 md:px-12">
             <div class="text-center mb-16">
-                <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-6">Our Portfolio</h2>
-                <div class="w-20 h-1 bg-amber-700 mx-auto mb-8"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                    Explore a selection of our favorite projects, showcasing our attention to detail and diverse design capabilities.
+                <h2 class="font-thin text-3xl md:text-4xl mb-4 tracking-wider">Recent Projects</h2>
+                <p class="text-gray-600 max-w-xl mx-auto leading-relaxed">
+                    Explore our portfolio of recently completed spaces and discover our design philosophy in action
                 </p>
             </div>
             
-            <!-- Portfolio Filter -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <button class="filter-btn active px-4 py-2 text-sm uppercase tracking-wider font-medium transition duration-300 hover:text-amber-700" data-filter="all">All</button>
-                <button class="filter-btn px-4 py-2 text-sm uppercase tracking-wider font-medium transition duration-300 hover:text-amber-700" data-filter="residential">Residential</button>
-                <button class="filter-btn px-4 py-2 text-sm uppercase tracking-wider font-medium transition duration-300 hover:text-amber-700" data-filter="commercial">Commercial</button>
-                <button class="filter-btn px-4 py-2 text-sm uppercase tracking-wider font-medium transition duration-300 hover:text-amber-700" data-filter="hospitality">Hospitality</button>
-            </div>
-            
-            <!-- Portfolio Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Project 1 -->
-                <div class="project-card relative overflow-hidden rounded-lg shadow-lg group" data-category="residential">
-                    <img src="/api/placeholder/600/600" alt="Modern Living Room" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition duration-300 flex flex-col justify-center items-center text-white p-6">
-                        <h3 class="font-playfair text-xl font-bold mb-2">Contemporary Loft</h3>
-                        <p class="text-sm text-center mb-4">A bright, open-concept living space with minimalist influences and warm accents.</p>
-                        <a href="#" class="inline-block border border-white hover:bg-white hover:text-gray-900 transition duration-300 px-4 py-2 text-sm uppercase tracking-wider">View Project</a>
+                <div class="project-card group relative overflow-hidden">
+                    <img src="images/portfolio-lakeview.jpg" alt="Modern Living Room" class="w-full h-80 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h3 class="font-thin text-xl mb-2 tracking-wide">Serene Lakeview Residence</h3>
+                            <p class="text-sm">Modern Minimalist Home</p>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="project-card relative overflow-hidden rounded-lg shadow-lg group" data-category="commercial">
-                    <img src="/api/placeholder/600/600" alt="Office Design" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition duration-300 flex flex-col justify-center items-center text-white p-6">
-                        <h3 class="font-playfair text-xl font-bold mb-2">Creative Agency Office</h3>
-                        <p class="text-sm text-center mb-4">An inspiring workspace designed to foster creativity and collaboration.</p>
-                        <a href="#" class="inline-block border border-white hover:bg-white hover:text-gray-900 transition duration-300 px-4 py-2 text-sm uppercase tracking-wider">View Project</a>
+                <div class="project-card group relative overflow-hidden">
+                    <img src="images/portfolio-urban-apartment.jpg" alt="Kitchen Design" class="w-full h-80 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h3 class="font-thin text-xl mb-2 tracking-wide">Urban Apartment Renovation</h3>
+                            <p class="text-sm">Contemporary City Living</p>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="project-card relative overflow-hidden rounded-lg shadow-lg group" data-category="hospitality">
-                    <img src="/api/placeholder/600/600" alt="Boutique Hotel" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition duration-300 flex flex-col justify-center items-center text-white p-6">
-                        <h3 class="font-playfair text-xl font-bold mb-2">Luxury Boutique Hotel</h3>
-                        <p class="text-sm text-center mb-4">An elegant, sophisticated hotel design featuring custom furniture and artisanal details.</p>
-                        <a href="#" class="inline-block border border-white hover:bg-white hover:text-gray-900 transition duration-300 px-4 py-2 text-sm uppercase tracking-wider">View Project</a>
+                <div class="project-card group relative overflow-hidden">
+                    <img src="images/portfolio-coastal-retreat.jpg" alt="Dining Room" class="w-full h-80 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h3 class="font-thin text-xl mb-2 tracking-wide">Coastal Retreat</h3>
+                            <p class="text-sm">Beachside Family Home</p>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Project 4 -->
-                <div class="project-card relative overflow-hidden rounded-lg shadow-lg group" data-category="residential">
-                    <img src="/api/placeholder/600/600" alt="Kitchen Design" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition duration-300 flex flex-col justify-center items-center text-white p-6">
-                        <h3 class="font-playfair text-xl font-bold mb-2">Modern Farmhouse Kitchen</h3>
-                        <p class="text-sm text-center mb-4">A warm, inviting kitchen that blends traditional elements with contemporary functionality.</p>
-                        <a href="#" class="inline-block border border-white hover:bg-white hover:text-gray-900 transition duration-300 px-4 py-2 text-sm uppercase tracking-wider">View Project</a>
+                <div class="project-card group relative overflow-hidden">
+                    <img src="images/portfolio-mountain-chalet.jpg" alt="Master Bedroom" class="w-full h-80 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h3 class="font-thin text-xl mb-2 tracking-wide">Mountain Chalet</h3>
+                            <p class="text-sm">Luxury Vacation Home</p>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Project 5 -->
-                <div class="project-card relative overflow-hidden rounded-lg shadow-lg group" data-category="commercial">
-                    <img src="/api/placeholder/600/600" alt="Retail Store" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition duration-300 flex flex-col justify-center items-center text-white p-6">
-                        <h3 class="font-playfair text-xl font-bold mb-2">Luxury Retail Space</h3>
-                        <p class="text-sm text-center mb-4">A sophisticated retail environment designed to enhance the shopping experience.</p>
-                        <a href="#" class="inline-block border border-white hover:bg-white hover:text-gray-900 transition duration-300 px-4 py-2 text-sm uppercase tracking-wider">View Project</a>
+                <div class="project-card group relative overflow-hidden">
+                    <img src="images/portfolio-creative-studio.jpg" alt="Home Office" class="w-full h-80 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h3 class="font-thin text-xl mb-2 tracking-wide">Creative Studio Space</h3>
+                            <p class="text-sm">Artist's Workplace</p>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Project 6 -->
-                <div class="project-card relative overflow-hidden rounded-lg shadow-lg group" data-category="residential">
-                    <img src="/api/placeholder/600/600" alt="Bedroom Design" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 transition duration-300 flex flex-col justify-center items-center text-white p-6">
-                        <h3 class="font-playfair text-xl font-bold mb-2">Serene Master Suite</h3>
-                        <p class="text-sm text-center mb-4">A tranquil retreat featuring luxurious textures and a calming color palette.</p>
-                        <a href="#" class="inline-block border border-white hover:bg-white hover:text-gray-900 transition duration-300 px-4 py-2 text-sm uppercase tracking-wider">View Project</a>
+                <div class="project-card group relative overflow-hidden">
+                    <img src="images/portfolio-modern-farmhouse.jpg" alt="Bathroom Design" class="w-full h-80 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h3 class="font-thin text-xl mb-2 tracking-wide">Modern Farmhouse</h3>
+                            <p class="text-sm">Rural Family Estate</p>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-12">
-                <a href="#" class="inline-block bg-amber-700 hover:bg-amber-800 text-white px-8 py-3 uppercase tracking-wider text-sm font-medium transition duration-300">
+            <div class="text-center mt-14">
+                <a href="#portfolio-all" class="inline-block border border-blue-900 hover:bg-blue-900 hover:text-white transition duration-300 px-8 py-3 uppercase tracking-wider text-sm">
                     View All Projects
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-24 bg-white">
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6 md:px-12">
             <div class="text-center mb-16">
-                <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-6">Client Testimonials</h2>
-                <div class="w-20 h-1 bg-amber-700 mx-auto mb-8"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                    Don't just take our word for it. Hear what our clients have to say about their experience working with ÉLÉGANCE.
+                <h2 class="font-thin text-3xl md:text-4xl mb-4 tracking-wider">Our Services</h2>
+                <p class="text-gray-600 max-w-xl mx-auto leading-relaxed">
+                    Comprehensive design solutions tailored to your unique needs
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Service 1 -->
+                <div class="text-center">
+                    <div class="inline-block p-6 mb-6">
+                        <i class="bx bx-home-alt text-4xl text-blue-900"></i>
+                    </div>
+                    <h3 class="font-thin text-xl mb-4 tracking-wide">Full-Service Design</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Our comprehensive approach takes care of every aspect of your project from concept to completion, including space planning, material selection, procurement, and installation.
+                    </p>
+                    <a href="#full-service" class="text-blue-900 hover:text-blue-700 uppercase tracking-wider text-xs">Learn More</a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="text-center">
+                    <div class="inline-block p-6 mb-6">
+                        <i class="bx bx-palette text-4xl text-blue-900"></i>
+                    </div>
+                    <h3 class="font-thin text-xl mb-4 tracking-wide">Styling & Decoration</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        For spaces that need a refresh rather than a renovation, our styling services focus on accessories, furniture arrangements, and decorative elements to transform your home.
+                    </p>
+                    <a href="#styling" class="text-blue-900 hover:text-blue-700 uppercase tracking-wider text-xs">Learn More</a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="text-center">
+                    <div class="inline-block p-6 mb-6">
+                        <i class="bx bx-cube-alt text-4xl text-blue-900"></i>
+                    </div>
+                    <h3 class="font-thin text-xl mb-4 tracking-wide">E-Design Services</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Our virtual design service provides professional guidance and curated design plans that you can implement at your own pace, regardless of your location.
+                    </p>
+                    <a href="#e-design" class="text-blue-900 hover:text-blue-700 uppercase tracking-wider text-xs">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#services-all" class="inline-block border border-blue-900 hover:bg-blue-900 hover:text-white transition duration-300 px-8 py-3 uppercase tracking-wider text-sm">
+                    View All Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="font-thin text-3xl md:text-4xl mb-4 tracking-wider">Client Experiences</h2>
+                <p class="text-gray-600 max-w-xl mx-auto leading-relaxed">
+                    What our clients are saying about their design journey with us
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <!-- Testimonial 1 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md relative">
-                    <div class="quote-mark font-playfair">"</div>
-                    <p class="text-gray-600 mb-6 leading-relaxed italic relative z-10">
-                        Working with ÉLÉGANCE was an absolute pleasure. They took the time to understand our vision and transformed our home into a space that is both beautiful and functional. Their attention to detail is unmatched.
+                <div class="bg-gray-50 p-8 rounded-md">
+                    <div class="mb-6 text-blue-900">
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-8 leading-relaxed italic">
+                        "House of Kenyariri transformed our space into something beyond what we imagined possible. They truly listened to our needs and delivered a design that reflects our personality while enhancing functionality."
                     </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="/api/placeholder/100/100" alt="Client" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Sarah Thompson</h4>
-                            <p class="text-gray-500 text-sm">Residential Client</p>
-                        </div>
+                    <div>
+                        <h4 class="font-normal">Sarah Johnson</h4>
+                        <p class="text-gray-500 text-sm">Full Home Design</p>
                     </div>
                 </div>
                 
                 <!-- Testimonial 2 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md relative">
-                    <div class="quote-mark font-playfair">"</div>
-                    <p class="text-gray-600 mb-6 leading-relaxed italic relative z-10">
-                        ÉLÉGANCE designed our office space with creativity and precision. They expertly balanced aesthetic appeal with practical functionality, creating a workspace that inspires our team every day.
+                <div class="bg-gray-50 p-8 rounded-md">
+                    <div class="mb-6 text-blue-900">
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-8 leading-relaxed italic">
+                        "Working with this team was delightful from start to finish. Their attention to detail and commitment to understanding our lifestyle made all the difference in creating our dream home."
                     </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="/api/placeholder/100/100" alt="Client" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Michael Chen</h4>
-                            <p class="text-gray-500 text-sm">CEO, Innovate Technologies</p>
-                        </div>
+                    <div>
+                        <h4 class="font-normal">Michael & Lisa Chen</h4>
+                        <p class="text-gray-500 text-sm">Kitchen Renovation</p>
                     </div>
                 </div>
                 
                 <!-- Testimonial 3 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md relative">
-                    <div class="quote-mark font-playfair">"</div>
-                    <p class="text-gray-600 mb-6 leading-relaxed italic relative z-10">
-                        The team at ÉLÉGANCE exceeded our expectations at every turn. They managed our complete home renovation with professionalism and made the process surprisingly stress-free. Highly recommended!
+                <div class="bg-gray-50 p-8 rounded-md">
+                    <div class="mb-6 text-blue-900">
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-8 leading-relaxed italic">
+                        "The e-design service was perfect for our needs. Despite never meeting in person, the team captured our vision perfectly and provided clear guidance we could implement at our own pace."
                     </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="/api/placeholder/100/100" alt="Client" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold">Emily & David Rodriguez</h4>
-                            <p class="text-gray-500 text-sm">Residential Clients</p>
-                        </div>
+                    <div>
+                        <h4 class="font-normal">James Taylor</h4>
+                        <p class="text-gray-500 text-sm">E-Design Client</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-gray-900 text-white">
+    <!-- Blog Preview Section -->
+    <section id="blog" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6 md:px-12">
-            <div class="text-center
+            <div class="text-center mb-16">
+                <h2 class="font-thin text-3xl md:text-4xl mb-4 tracking-wider">From The Blog</h2>
+                <p class="text-gray-600 max-w-xl mx-auto leading-relaxed">
+                    Design inspiration, tips, and insights from our team
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="group">
+                    <div class="overflow-hidden mb-6">
+                        <img src="images/blog-timeless-interior.jpg" alt="Blog Post" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <p class="text-gray-500 text-sm mb-2">May 15, 2025</p>
+                    <h3 class="font-thin text-xl mb-3">How to Create a Timeless Interior That Evolves With You</h3>
+                    <a href="#blog-post-1" class="text-blue-900 hover:text-blue-700 uppercase tracking-wider text-xs">Read More</a>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="group">
+                    <div class="overflow-hidden mb-6">
+                        <img src="images/blog-layering-textures.jpg" alt="Blog Post" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <p class="text-gray-500 text-sm mb-2">May 10, 2025</p>
+                    <h3 class="font-thin text-xl mb-3">The Art of Layering Textures in Neutral Spaces</h3>
+                    <a href="#blog-post-2" class="text-blue-900 hover:text-blue-700 uppercase tracking-wider text-xs">Read More</a>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="group">
+                    <div class="overflow-hidden mb-6">
+                        <img src="images/blog-designing-purpose.jpg" alt="Blog Post" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+                    </div>
+                    <p class="text-gray-500 text-sm mb-2">May 5, 2025</p>
+                    <h3 class="font-thin text-xl mb-3">Designing With Purpose: How Intentional Design Improves Wellbeing</h3>
+                    <a href="#blog-post-3" class="text-blue-900 hover:text-blue-700 uppercase tracking-wider text-xs">Read More</a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-14">
+                <a href="#blog-all" class="inline-block border border-blue-900 hover:bg-blue-900 hover:text-white transition duration-300 px-8 py-3 uppercase tracking-wider text-sm">
+                    View All Posts
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="font-thin text-2xl md:text-3xl mb-4 tracking-wider">Join Our Community</h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Subscribe to our newsletter for design inspiration, project reveals, and exclusive content
+                </p>
+                <form class="flex flex-col md:flex-row gap-4">
+                    <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 border border-gray-300 focus:outline-none focus:border-blue-900">
+                    <button type="submit" class="bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 uppercase tracking-wider text-sm transition duration-300">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-10">
+                <h2 class="font-thin text-2xl md:text-3xl mb-4 tracking-wider">Follow Along</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    @houseofkenyariri
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                <!-- Instagram Post 1 -->
+                <div class="overflow-hidden">
+                    <img src="images/instagram-1.jpg" alt="Instagram Post" class="w-full h-full object-cover hover:opacity-90 transition duration-300">
+                </div>
+                
+                <!-- Instagram Post 2 -->
+                <div class="overflow-hidden">
+                    <img src="images/instagram-2.jpg" alt="Instagram Post" class="w-full h-full object-cover hover:opacity-90 transition duration-300">
+                </div>
+                
+                <!-- Instagram Post 3 -->
+                <div class="overflow-hidden">
+                    <img src="images/instagram-3.jpg" alt="Instagram Post" class="w-full h-full object-cover hover:opacity-90 transition duration-300">
+                </div>
+                
+                <!-- Instagram Post 4 -->
+                <div class="overflow-hidden">
+                    <img src="images/instagram-4.jpg" alt="Instagram Post" class="w-full h-full object-cover hover:opacity-90 transition duration-300">
+                </div>
+                
+                <!-- Instagram Post 5 -->
+                <div class="overflow-hidden">
+                    <img src="images/instagram-5.jpg" alt="Instagram Post" class="w-full h-full object-cover hover:opacity-90 transition duration-300">
+                </div>
+                
+                <!-- Instagram Post 6 -->
+                <div class="overflow-hidden">
+                    <img src="images/instagram-6.jpg" alt="Instagram Post" class="w-full h-full object-cover hover:opacity-90 transition duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-12 bg-gray-900 text-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <a href="#home" class="flex items-center">
+                        <img src="images/logo.png" alt="House of Kenyariri" class="h-10">
+                    </a>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <!-- Footer Links -->
+                    <div class="flex flex-col">
+                        <a href="#shop" class="hover:text-blue-300 transition duration-300">Shop</a>
+                        <a href="#portfolio" class="hover:text-blue-300 transition duration-300">Portfolio</a>
+                        <a href="#services" class="hover:text-blue-300 transition duration-300">Services</a>
+                        <a href="#about" class="hover:text-blue-300 transition duration-300">About</a>
+                        <a href="#blog" class="hover:text-blue-300 transition duration-300">Blog</a>
+                    </div>
+                    
+                    <!-- Social Media Links -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-blue-300 transition duration-300">
+                            <i class="bx bxl-facebook-circle text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-blue-300 transition duration-300">
+                            <i class="bx bxl-instagram text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-blue-300 transition duration-300">
+                            <i class="bx bxl-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-blue-300 transition duration-300">
+                            <i class="bx bxl-pinterest-alt text-2xl"></i>
+                        </a>
+                    </div>
+                </div
